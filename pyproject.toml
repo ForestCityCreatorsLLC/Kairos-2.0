@@ -1,0 +1,54 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kairos-os"
+version = "2.0.0"
+description = "KAIROS 2.0 — Simplified Local-First Virtual Assistant, Projects Engine & Obsidian Dual-AI MCP Ecosystem"
+authors = [{ name = "Forest City Creators LLC" }]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "fastapi>=0.111.0",
+    "uvicorn[standard]>=0.30.0",
+    "pydantic>=2.7.4",
+    "pydantic-settings>=2.3.0",
+    "PyYAML>=6.0.1",
+    "requests>=2.32.0",
+    "watchdog>=4.0.1",
+    "python-dotenv>=1.0.1",
+    "mcp>=1.1.0",
+    "google-genai>=1.0.0",
+]
+
+[project.optional-dependencies]
+agents = [
+    "crewai>=0.80.0",
+]
+voice = [
+    "sounddevice>=0.4.7",
+    "edge-tts>=6.1.12",
+]
+cognitive-voice = [
+    "numpy>=1.26.0",
+    "faster-whisper>=1.0.3",
+    "kokoro-onnx>=0.4.0",
+    "sqlite-vec>=0.1.3",
+    "onnxruntime>=1.18.0",
+    "mss>=9.0.1",
+    "Pillow>=10.4.0",
+    "sounddevice>=0.4.7",
+]
+dev = [
+    "pytest>=8.2.0",
+    "httpx>=0.27.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["services*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]

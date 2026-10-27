@@ -1,0 +1,39 @@
+# Python & Virtual Environments
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+
+# Node / Electron / Frontend Build & Heavy Packages
+node_modules/
+packages/
+apps/desktop/node_modules/
+apps/desktop/dist/
+apps/desktop/release/
+
+# Local AI / TTS / STT Model Weights (Kokoro ONNX, Whisper, etc.)
+models/
+*.onnx
+*.bin
+*.pt
+*.safetensors
+
+# Secrets, OAuth & Local State
+.env
+.env.*
+!.env.example
+credentials.json
+token.json
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal
+logs/
+*.log
+.tmp/
+
+# Windows & OneDrive Artifacts
+Thumbs.db
+[Dd]esktop.ini
